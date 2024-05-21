@@ -1,9 +1,7 @@
 
-package com.calculator;
-
 import java.util.Scanner;
 
-public class Calculator {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
