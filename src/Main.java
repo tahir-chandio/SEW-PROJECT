@@ -1,3 +1,4 @@
+
 package com.calculator;
 
 import java.util.Scanner;
@@ -16,5 +17,55 @@ public class Calculator {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
+            
+            if (choice == 5) {
+                System.out.println("Exiting...");
+                break;
+            }
+
+            System.out.print("Enter the first number: ");
+            double num1 = scanner.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+            
+            switch (choice) {
+                case 1:
+                    System.out.println("Result: " + add(num1, num2));
+                    break;
+                case 2:
+                    System.out.println("Result: " + subtract(num1, num2));
+                    break;
+                case 3:
+                    System.out.println("Result: " + multiply(num1, num2));
+                    break;
+                case 4:
+                    if (num2 != 0) {
+                        System.out.println("Result: " + divide(num1, num2));
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
         }
-  }
+
+        scanner.close();
+    }
+
+    private static double add(double a, double b) {
+        return a + b;
+    }
+
+    private static double subtract(double a, double b) {
+        return a - b;
+    }
+
+    private static double multiply(double a, double b) {
+        return a * b;
+    }
+
+    private static double divide(double a, double b) {
+        return a / b;
+    }
+}
